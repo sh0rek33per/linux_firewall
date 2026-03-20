@@ -125,6 +125,6 @@ int firewall_reset_stats(void);
 
 // 日志
 int firewall_get_logs(firewall_log_entry_t **logs, int *count, int offset, int limit);
-int firewall_clean_logs(void);
+int firewall_clear_logs(void);
 
 #endif /* FIREWALL_H */
