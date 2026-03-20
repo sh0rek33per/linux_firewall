@@ -57,7 +57,7 @@ int firewall_list_rules(firewall_rule_t **rules, int *count) {
   return 0;
 }
 
-int firewall_get_rule(int rule_id, firewall_rule_id *rule) {
+int firewall_get_rule(int rule_id, firewall_rule_t *rule) {
   (void)rule_id;
   (void)rule;
   return -1;
