@@ -48,7 +48,7 @@ install-deps:
 # ================ 创建目录 ================
 dirs:
 	@mkdir -p $(SRC_DIR)/core
-	@midir -p $(SRC_DIR)/backend
+	@mkdir -p $(SRC_DIR)/backend
 	@mkdir -p $(SRC_DIR)/database
 	@mkdir -p $(SRC_DIR)/http/handlers
 	@mkdir -p $(SRC_DIR)/utils
