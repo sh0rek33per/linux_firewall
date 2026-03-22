@@ -6,7 +6,7 @@
 #include <firewall.h>
 
 /* ================ 全局变量 ================ */
-static volatile int g_runninng = 1;
+static volatile int g_running = 1;
 
 /* ================ 信号处理 ================ */
 static void signal_handler(int sig){
@@ -35,7 +35,7 @@ int main(int argc, char *argv[]) {
   config.port = 12345;
   strcpy(config.bind_addr, "0.0.0.0");
   config.mode = MODE_AUTO;
-  config.queue.number = 0;
+  config.queue_number = 0;
   config.auto_load_modules = 1;
   strcpy(config.db_path, "./firewall.db");
   config.log_retention_days = 30;
@@ -97,11 +97,11 @@ int main(int argc, char *argv[]) {
   /* 启动防火墙 */
   if (firewall_start() != 0){
     fprintf(stderr, "Failed to start firewall\n");
-    firewall_destory();
+    firewall_destroy();
     return 1;
   }
 
-  printf("Firewall started successfully!\n")
+  printf("Firewall started successfully!\n");
   printf("Web interface: http://localhost:%d\n", config.port);
   printf("Press Ctrl+C to stop\n\n");
 
